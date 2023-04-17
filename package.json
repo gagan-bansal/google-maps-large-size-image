@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "Create large size high resolution image from google maps.",
   "main": "lib/index.js",
+  "types": "index.d.ts",
   "scripts": {
+    "build:typeDef": "rm lib/*.d.ts && npx -p typescript tsc lib/*.js --declaration --allowJs --emitDeclarationOnly",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -24,6 +26,7 @@
     "sharp": "^0.31.3"
   },
   "devDependencies": {
+    "@types/node": "^18.15.11",
     "dotenv": "^16.0.3",
     "jsonfile": "^6.1.0"
   }

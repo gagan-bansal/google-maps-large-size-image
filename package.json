@@ -1,6 +1,6 @@
 {
   "name": "google-maps-large-size-image",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Create large size high resolution image from google maps.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

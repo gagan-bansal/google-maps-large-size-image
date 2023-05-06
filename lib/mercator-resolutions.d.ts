@@ -1,3 +1,4 @@
-export const resolutions: any[];
-export function reprojectToImageCoord(coord: any, imgTopLeft: any, zoom: any, scale: any): number[];
-export function rasterCoord(coord: any, zoom: any): number[];
+declare type xy = [number, number];
+export const resolutions: number[];
+export function reprojectToImageCoord(coord: xy, imgTopLeft: xy, zoom: number, scale: number): number[];
+export function rasterCoord(coord: xy, zoom: number): xy[] ;

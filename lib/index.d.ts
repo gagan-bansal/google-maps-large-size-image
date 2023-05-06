@@ -1,21 +1,33 @@
 /// <reference types="node" />
+/// <reference types="geojson" />
+
+import {BBox} from "@types/geojson";
+import { Buffer } from "buffer";
+
+export interface LargeMapOptions {
+  maptype?: string,
+  format?: string,
+  scale?: number,
+  maxTileSize?: number,
+  style?: string,
+  language?: string,
+  region?: string;
+};
+
 export class LargeMap {
-    constructor(googleApiKey: any, options?: {});
-    googleApiKey: any;
-    maptype: any;
-    format: any;
-    scale: any;
-    maxTileSize: any;
-    style: any;
-    language: any;
-    region: any;
-    getImage(extent: any, zoom: number, overlay: any): Promise<Buffer>;
-    getTiles(extent: any, zoom?: number): {
+    constructor(googleApiKey: string, extent: BBox, options?: LargeMapOptions);
+    googleApiKey: string;
+    maptype: string;
+    format: string;
+    scale: number;
+    maxTileSize: number;
+    style: string;
+    language: string;
+    region: string;
+    getImage(extent: Extent, zoom: number): Promise<Buffer>;
+    getTiles(extent: Extent, zoom: number): {
         tiles: any[][];
         imageWidth: number;
         imageHeight: number;
     };
-    getMarkers(): boolean;
-    getPaths(extent: any): any;
 }
-import { Buffer } from "buffer";
